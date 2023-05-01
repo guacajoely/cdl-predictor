@@ -51,11 +51,10 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
                 alt={`${team.name} Logo`}
 
             />
+
+            <div className={` ${finalScore[arrayIndex] === 3 ? 'winner--overall' : 'loser--overall'} `}> {finalScore[arrayIndex]} </div>
             <table>
                 <tbody className="team--table" key={`team--${team.id}`}>
-                    <tr>
-                        <div className={` ${finalScore[arrayIndex] === 3 ? 'winner--overall' : 'loser--overall'} `}> {finalScore[arrayIndex]} </div>
-                    </tr>
                     <tr>
                         <td className="team--name">{team.name.toUpperCase()}</td>
                     </tr>

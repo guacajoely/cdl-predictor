@@ -17,11 +17,6 @@ export const Comparison = (team1, team2) => {
     hpWinner = team2.name;
     finalScore[1]++}
 
-
-  console.log(hpWinner + ' should win both hardpoints');
-
-
-
 //COMPARES SEARCH AND DESTROY WIN PERCENTAGES 
 
   if(team1.snd > team2.snd){
@@ -32,11 +27,6 @@ export const Comparison = (team1, team2) => {
     sndWinner = team2.name;
     finalScore[1]++}
 
-
-  console.log(sndWinner + ' should win both Search and Destroys');
-
-
-
 //COMPARES CONTROL WIN PERCENTAGES 
 
   if(team1.con > team2.con){
@@ -46,11 +36,6 @@ export const Comparison = (team1, team2) => {
   else{ 
     conWinner = team2.name;
     finalScore[1]++}
-
-
-  console.log(conWinner + ' should win the control');
-
-
 
 //FIND EXPECTED WINNER OF SERIES BASED ON EACH GAME MODE
 

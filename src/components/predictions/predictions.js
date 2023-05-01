@@ -26,10 +26,6 @@ export const PredictionHistory = ({ predictionSetterFunction , predictionsState,
     },
         [])
 
-    console.log(predictionsState)
-    console.log(teams)
-
-
     return <>
 
         <div className="predictions--container">

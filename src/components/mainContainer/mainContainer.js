@@ -43,6 +43,6 @@ export const MainContainer = () => {
 
         </div>
 
-        <footer ref={predictionsRef} className="footer"><a href="https://github.com/guacajoely">gwockajoely</a></footer>
+        <footer ref={predictionsRef} className="footer"><a href="https://github.com/guacajoely">guacajoely</a></footer>
     </>
 }

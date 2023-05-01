@@ -42,7 +42,7 @@ td {
 }
 
 .prediction--text{
-    padding:20px 0;
+    padding:25px 0;
     font-size: larger;
 }
 
@@ -75,7 +75,7 @@ td {
 
 .results--text--table > tr {
     margin: 10px;
-    padding: 1px;
+    padding: 2px;
 }
 
 .results--text--table > tr > td {
@@ -101,9 +101,10 @@ td {
 
 .loser--overall, .winner--overall{
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 3.2rem;
     background-color: var(--light-gray);
     border: none;
+    margin-top: 35px;
 }
 
 .winner--overall{
