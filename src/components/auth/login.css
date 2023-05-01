@@ -65,11 +65,6 @@ fieldset {
     background-repeat: no-repeat;
 }
 
-.button--close {
-    position: relative;
-    bottom: -2rem;
-}
-
 .submit--button, .register--button{
     background-color: black;
     color: white;

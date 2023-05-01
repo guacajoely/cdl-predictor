@@ -38,5 +38,9 @@ code {
 
   --transition: 0.15s;
   --border-radius: 0.5rem;
-  --box-shadow: #39ff07;
+  --green-shadow: #39ff07;
+  --green-transparent: rgba(57, 255, 7, 0.3);
+  --red-shadow: #ff1300;
+  --red-transparent: rgba(255, 20, 0, 0.3);
+
 }

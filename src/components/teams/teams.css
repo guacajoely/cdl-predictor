@@ -42,7 +42,7 @@
     border-radius: 25px;
     font-size: 15px;
     text-align: center;
-    opacity: .8;
+    opacity: .6;
     color:var(--light-gray);
     box-shadow: 0 0 0 3px var(--light-gray);
 }
@@ -54,7 +54,7 @@ input {
 .checked{
     opacity: 1;
     color: black;
-    box-shadow: 0 0 0 3px var(--box-shadow);
+    box-shadow: 0 0 0 3px var(--green-shadow);
 }
 
 label img {

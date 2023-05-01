@@ -1,6 +1,7 @@
 import { useRef, useState } from "react"
 import { TeamSection } from "../teams/teams.js"
 import { ResultsSection } from "../results/results.js"
+import { PredictionHistory } from "../predictions/predictions.js"
 
 export const MainContainer = () => {
 
@@ -13,6 +14,9 @@ export const MainContainer = () => {
     const scrollToResults = () => {
         resultsRef.current.scrollIntoView();
     }
+
+    const localUser = localStorage.getItem("current_user")
+    const userObject = JSON.parse(localUser)
 
     return <>
         <div className="home--container">
@@ -30,7 +34,7 @@ export const MainContainer = () => {
             />}
 
             <div className="history--header">PREVIOUS PREDICTIONS</div>
-            {<>PREDICTION HISTORY GO HERE</>}
+            { userObject ? <PredictionHistory/> : <>Please login to save predictions</>}
 
         </div>
     </>

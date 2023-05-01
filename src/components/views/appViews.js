@@ -15,7 +15,7 @@ export const ApplicationViews = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/sources" element={<div className="sources--header">STAT SOURCES</div>} />
                 <Route path="/login" element={<Login />} />
-	        <Route path="/register" element={<Register />} />\
+	            <Route path="/register" element={<Register />} />\
             
         </Routes>
     )

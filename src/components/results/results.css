@@ -11,9 +11,9 @@
 .results--text{
     width: 180px;
     height: 180px;
-    margin: 10px;
     border: solid var(--light-gray);
     font-weight: bolder;
+    font-size: x-large;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,14 +38,19 @@ td {
     width: 200px;
     display: flex;
     flex-direction: column;
-    margin: 30px 0;
+    margin: 20px 0;
+}
+
+.prediction--text{
+    padding:20px 0;
+    font-size: larger;
 }
 
 .team--table > tr {
     margin: 10px;
 }
 
-.team--table > tr:nth-child(even) {
+.team--table > tr {
     background-color: white;
 }
 
@@ -56,15 +61,21 @@ td {
     padding: 10px;
 }
 
+.team--name{
+    font-weight: bold;
+}
+
 .results--text--table{
     width: 200px;
     display: flex;
     flex-direction: column;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .results--text--table > tr {
     margin: 10px;
+    padding: 1px;
 }
 
 .results--text--table > tr > td {
@@ -76,4 +87,61 @@ td {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.winner{
+    background-color: var(--green-transparent);
+    box-shadow: 0 0 4px 1px var(--green-shadow);
+}
+
+.loser{
+    background-color: var(--red-transparent);
+    box-shadow: 0 0 4px 1px var(--red-shadow);
+}
+
+.loser--overall, .winner--overall{
+    font-weight: bold;
+    font-size: 3rem;
+    background-color: var(--light-gray);
+    border: none;
+}
+
+.winner--overall{
+    color:darkgreen;
+    text-shadow: lime 1px 1px 1px;
+}
+
+.loser--overall{
+    color:darkred;
+    text-shadow: pink 1px 1px 1px;
+}
+
+.winner--image{
+    border: solid white;
+    box-shadow: 0 0 4px 2px var(--green-shadow);
+}
+
+.loser--image{
+    border: solid white;
+    box-shadow: 0 0 4px 2px var(--red-shadow);
+}
+
+.button{
+    background-color: black;
+    color: white;
+    border: solid thin white;
+    padding: 10px;
+    border-radius: 15px;
+    margin:0 10px;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+    border: solid thin black;
+    cursor: pointer;
+}
+
+.button--container{
+    margin: 20px 0 40px 0;
 }

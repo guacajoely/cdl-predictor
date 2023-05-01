@@ -1,0 +1,26 @@
+.prediction--card{
+    display: flex;
+    margin: 30px auto;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: thin solid black;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width:fit-content;
+}
+
+.prediction--score{
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.prediction--team1, .prediction--team2 {
+    font-size: large;
+    width:300px;
+}
+
+
+
+

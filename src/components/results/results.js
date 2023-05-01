@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getTeams } from "../ApiManager.js"
 import "./results.css"
+import { Comparison } from "./comparison.js"
 
 export const ResultsSection = ({ checkedTeamsState, scrollToTeams, checkedTeamsSetterFunction }) => {
 
@@ -28,33 +29,46 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, checkedTeamsS
         }, [checkedTeamsState, teams]
     )
 
-    const createTeam = (team) => {
+
+
+    const compareTeams = () => {
+        return Comparison(filteredTeams[0], filteredTeams[1])
+    }
+
+    const createTeam = (team, otherTeam, arrayIndex) => {
+
+        const finalScore = compareTeams()
+
         return <div className="team--container">
             <img className={` 
             
+            ${finalScore[arrayIndex] === 3 ? 'winner--image' : 'loser--image'}
             ${team.name}-image 
             results--image`}
 
                 src={require(`../../images/${team.name}.png`)}
-                alt={`${team.name}Logo`}
+                alt={`${team.name} Logo`}
 
             />
             <table>
                 <tbody className="team--table" key={`team--${team.id}`}>
                     <tr>
-                        <td>{team.name}</td>
+                        <div className={` ${finalScore[arrayIndex] === 3 ? 'winner--overall' : 'loser--overall'} `}> {finalScore[arrayIndex]} </div>
                     </tr>
                     <tr>
-                        <td>{team.hp}</td>
+                        <td className="team--name">{team.name.toUpperCase()}</td>
                     </tr>
                     <tr>
-                        <td>{team.snd}</td>
+                        <td className={` ${team.hp > otherTeam.hp ? 'winner' : 'loser'} `}> {team.hp} </td>
                     </tr>
                     <tr>
-                        <td>{team.con}</td>
+                        <td className={` ${team.snd > otherTeam.snd ? 'winner' : 'loser'} `}> {team.snd} </td>
                     </tr>
                     <tr>
-                        <td>{team.seed}</td>
+                        <td className={` ${team.con > otherTeam.con ? 'winner' : 'loser'} `}> {team.con} </td>
+                    </tr>
+                    <tr>
+                        <td className={` ${team.seed < otherTeam.seed ? 'winner' : 'loser'} `}> {team.seed} </td>
                     </tr>
                 </tbody>
             </table>
@@ -65,66 +79,67 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, checkedTeamsS
         checkedTeamsSetterFunction([])
         scrollToTeams()
     }
-    
 
-    
 
     return (
 
         <>
-            <div id="results_container" className="results--container">
+            <div>
 
                 {filteredTeams.length > 1 ?
                     <>
-                        {createTeam(filteredTeams[0])}
+                        <div id="results_container" className="results--container">
+                            {createTeam(filteredTeams[0], filteredTeams[1], 0)}
 
-                        <section className="team--container">
+                            <section className="team--container">
 
-                            <div className="results--text">VS</div>
+                                <div className="results--text">VS</div>
 
-                            <table>
-                                <tbody className="results--text--table">
-                                    <tr>
-                                        <td>TEAM</td>
-                                    </tr>
-                                    <tr>
-                                        <td>HARDPOINT WIN %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>SND WIN %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CONTROL WIN %</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CURRENT SEED</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
+                                <table>
+                                    <tbody className="results--text--table">
+                                        <tr>
+                                            <td className="prediction--text">PREDICTED SCORE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TEAM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>HARDPOINT WIN %</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SND WIN %</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CONTROL WIN %</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CURRENT SEED</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
 
 
-                        {createTeam(filteredTeams[1])}
+                            {createTeam(filteredTeams[1], filteredTeams[0], 1)}
+
+                        </div>
+
+                        <div className="button--container">
+                            <button className="button" onClick={() => { }}> Save Prediction </button>
+                            <button className="button" onClick={handleNewPrediction}> Make Another Prediction </button>
+                        </div>
+
+
                     </>
 
-
-
-
-
-
-
-
                     :
-                    ''
+
+                    'SELECT 2 TEAMS FOR A FACE-TO-FACE COMPARISON'
                 }
 
             </div>
 
 
-            <button className="button" 
-                    onClick={handleNewPrediction}>
-                            Make Another Prediction
-                        </button>
 
         </>)
 }
