@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
-import { getTeams } from "../ApiManager.js"
+import { createPrediction, getPredictions, getTeams } from "../ApiManager.js"
 import "./results.css"
 import { Comparison } from "./comparison.js"
 
-export const ResultsSection = ({ checkedTeamsState, scrollToTeams, checkedTeamsSetterFunction }) => {
+export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredictions, checkedTeamsSetterFunction, predictionSetterFunction }) => {
 
     const [teams, setTeams] = useState([])
     const [filteredTeams, setFiltered] = useState([])
 
+    const localUser = localStorage.getItem("current_user")
+    const userObject = JSON.parse(localUser)
+    const userId = parseInt(userObject?.id)
 
     useEffect(() => {
         getTeams()
@@ -28,8 +31,6 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, checkedTeamsS
 
         }, [checkedTeamsState, teams]
     )
-
-
 
     const compareTeams = () => {
         return Comparison(filteredTeams[0], filteredTeams[1])
@@ -80,6 +81,29 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, checkedTeamsS
         scrollToTeams()
     }
 
+    const reFetchPredictions = () => {
+        getPredictions(userId)
+        .then((responseArray) => {
+            predictionSetterFunction(responseArray)
+        })
+    }
+
+    const handleSavePrediction = () => {
+
+        const finalScore = compareTeams()
+        const team1id = filteredTeams[0].id
+        const team2id = filteredTeams[1].id
+
+        userObject?
+        createPrediction(userId, team1id, team2id, finalScore)
+            .then(reFetchPredictions())
+        :window.alert("Please login to save your predictions")
+
+        setTimeout(scrollToPredictions(), 1000)
+    }
+
+
+
 
     return (
 
@@ -125,7 +149,7 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, checkedTeamsS
                         </div>
 
                         <div className="button--container">
-                            <button className="button" onClick={() => { }}> Save Prediction </button>
+                            <button className="button" onClick={handleSavePrediction}> Save Prediction </button>
                             <button className="button" onClick={handleNewPrediction}> Make Another Prediction </button>
                         </div>
 
@@ -134,12 +158,10 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, checkedTeamsS
 
                     :
 
-                    'SELECT 2 TEAMS FOR A FACE-TO-FACE COMPARISON'
+                    <div style={{ 'margin' : '40px' }}>Select 2 teams for a head-to-head comparison</div>
                 }
 
             </div>
-
-
 
         </>)
 }
