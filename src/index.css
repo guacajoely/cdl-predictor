@@ -1,13 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+::-webkit-scrollbar {width: 13px}
+::-webkit-scrollbar-track {background: var(--light-gray)}
+::-webkit-scrollbar-thumb {background: black}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-gray);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+*{
+  
+  --light-gray: #f2f2f2;
+  --faze-bkgr: #e43d30;
+  --breach-bkgr: #1a1f29;
+  --mutineers-bkgr: #025157;
+  --ravens-bkgr: #000f9f;
+  --guerrillas-bkgr: #000000;
+  --thieves-bkgr: #000000;
+  --rokkr-bkgr: #351f65;
+  --subliners-bkgr: #fff000;
+  --optic-bkgr: #000000;
+  --legion-bkgr: #131e29;
+  --surge-bkgr: #001231;
+  --ultra-bkgr: #780df2;
+
+  --transition: 0.15s;
+  --border-radius: 0.5rem;
+  --box-shadow: #39ff07;
 }

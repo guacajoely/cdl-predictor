@@ -1,0 +1,13 @@
+.about--container{
+    margin: 30px;
+}
+
+.about--question{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.about--answer a{
+    font-weight: bold;
+    text-decoration: none;
+}
