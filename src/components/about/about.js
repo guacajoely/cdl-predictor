@@ -10,8 +10,8 @@ export const About = () => {
     <br />
     <div className="about--question">What games are supported?</div>
     <div className="about--answer">
-      Initially, only Call of Duty will be supported, but additional esports will
-      be considered in the near future. Valorant is the most likely title to be
+      Initially, only Call of Duty will be supported, but the plan is to include  
+      additional esports in the near future. Valorant is the most likely title to be
       added next.
     </div>
     <br />
@@ -22,25 +22,29 @@ export const About = () => {
       <p>
         However, the idea was originally the result of a <a href="https://pickem.callofdutyleague.com">pickem app</a> being added to
         the official CDL site. You can predict match
-        outcomes and even win prizes if you're in the top 5 or so. Whether you
-        want a baseline to fill out your bracket with the favorites for each match
-        (a future feature?) or you just haven't been following the league closely
-        and want to check on how teams are performing, this will allow you to
-        easily do so.
+        outcomes and even win prizes if you make it into the top 10 of the 
+        leaderboards, Which I have done using this system! Whether you want a  
+        baseline to fill out your bracket with the favorites for each match
+        or you just haven't been following the league closely and want to check  
+        on how teams are performing, this app will allow you to easily do so.
       </p>
     </div>
     <div className="about--question">How accurate are the predictions?</div>
     <div className="about--answer">
       The predictions will be fairly simple initially, and solely based on each
-      teams win/loss rate in each of the three modes compared to that of their
+      teams win/loss rate in each of the three game modes compared to that of their
       opponent. But the plan is to add additional information and filters over time
       such as:
       <ul>
         <li>the ability to filter results based on a specific map pool</li>
         <li>an indicator when a team has had a recent roster change</li>
         <li>
-          additional stats (ex. first blood % in SnD or hill
-          break/hold % in hardpoint)
+          additional stats such as:
+          <ul>
+            <li>first blood % in SnD </li>
+            <li>hill break/hold % in hardpoint</li>
+            <li>offense vs defense round wins in Control</li>
+          </ul>
         </li>
         <li>
           an option to include scrimmage results and/or stats from previous

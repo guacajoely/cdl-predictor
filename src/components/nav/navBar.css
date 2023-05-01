@@ -16,7 +16,7 @@
     margin: 10px;
 }
 
-ul, li {
+.navbar--item {
     list-style-type: none;
     margin: 0;
 }
