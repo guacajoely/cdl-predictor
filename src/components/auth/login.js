@@ -43,6 +43,12 @@ export const Login = () => {
                             required autoFocus />
                     </fieldset>
                     <fieldset>
+                        <label htmlFor="inputPassword"> Password </label>
+                        <input type="password"
+                            className="form-control"
+                            required autoFocus />
+                    </fieldset>
+                    <fieldset>
                         <button className="submit--button" type="submit">
                             Sign in
                         </button>

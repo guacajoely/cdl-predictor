@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getTeams } from "../ApiManager.js"
 import "./teams.css"
 
-export const TeamSection = ({ checkedTeamsState, checkedTeamsSetterFunction }) => {
+export const TeamSection = ({ checkedTeamsState, checkedTeamsSetterFunction, scrollToResults }) => {
 
     const [teams, setTeams] = useState([])
 
@@ -44,8 +44,7 @@ export const TeamSection = ({ checkedTeamsState, checkedTeamsSetterFunction }) =
 
             //IF THIS IS THE SECOND TEAM CHECKED, SCROLL TO RESULTS SECTION
             if (checkedTeamsState.length === 2) {
-                document.getElementById("results_container")?.scrollIntoView({ behavior: 'smooth' })
-                console.log("I should be scrolling to the results section but I'm probably not")
+                setTimeout(scrollToResults, 300);
             }
         }
 

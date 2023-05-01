@@ -4,7 +4,7 @@ import "./login.css"
 
 export const Register = () => {
 
-    const [customer, setCustomer] = useState({
+    const [user, setUser] = useState({
         username: "",
         password: "",
         email: ""
@@ -18,7 +18,7 @@ export const Register = () => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(customer)
+            body: JSON.stringify(user)
         })
             .then(res => res.json())
             .then(createdUser => {
@@ -32,9 +32,9 @@ export const Register = () => {
             })
     }
 
-    const handleRegister = (e) => {
-        e.preventDefault()
-        return fetch(`http://localhost:8088/users?email=${customer.email}`)
+    const handleRegister = (event) => {
+        event.preventDefault()
+        return fetch(`http://localhost:8088/users?email=${user.email}`)
             .then(res => res.json())
             .then(response => {
                 if (response.length > 0) {
@@ -48,10 +48,10 @@ export const Register = () => {
             })
     }
 
-    const updateCustomer = (evt) => {
-        const copy = { ...customer }
-        copy[evt.target.id] = evt.target.value
-        setCustomer(copy)
+    const updateUser = (event) => {
+        const copy = { ...user }
+        copy[event.target.id] = event.target.value
+        setUser(copy)
     }
 
     return (
@@ -61,21 +61,21 @@ export const Register = () => {
 
                 <fieldset>
                     <label htmlFor="username"> Username </label>
-                    <input onChange={updateCustomer}
+                    <input onChange={updateUser}
                         type="text" id="username" className="form-control"
                         placeholder="" required autoFocus />
                 </fieldset>
 
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
-                    <input onChange={updateCustomer}
+                    <input onChange={updateUser}
                         type="email" id="email" className="form-control"
                         placeholder="" required />
                 </fieldset>
 
                 <fieldset>
                     <label htmlFor="password"> Password </label>
-                    <input onChange={updateCustomer}
+                    <input onChange={updateUser}
                         type="text" id="password" className="form-control"
                         placeholder="" required />
                 </fieldset>

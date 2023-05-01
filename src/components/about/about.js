@@ -21,7 +21,7 @@ export const About = () => {
       programming and wanted to work on something I am passionate about.
       <p>
         However, the idea was originally the result of a <a href="https://pickem.callofdutyleague.com">pickem app</a> being added to
-        the CDL site. You can predict match
+        the official CDL site. You can predict match
         outcomes and even win prizes if you're in the top 5 or so. Whether you
         want a baseline to fill out your bracket with the favorites for each match
         (a future feature?) or you just haven't been following the league closely
@@ -33,19 +33,18 @@ export const About = () => {
     <div className="about--answer">
       The predictions will be fairly simple initially, and solely based on each
       teams win/loss rate in each of the three modes compared to that of their
-      opponent. But the plan is to add additional variables and filters over time
+      opponent. But the plan is to add additional information and filters over time
       such as:
       <ul>
-        <li>individual map performance</li>
-        <li>adjustments for roster changes</li>
+        <li>the ability to filter results based on a specific map pool</li>
+        <li>an indicator when a team has had a recent roster change</li>
         <li>
-          weight added for more complex stats (ex. first blood % in SnD or hill
-          break % in hardpoint)
+          additional stats (ex. first blood % in SnD or hill
+          break/hold % in hardpoint)
         </li>
         <li>
-          possibly the option to include scrimmage results and stats from previous
-          game titles in the calculations since data available will be scarce
-          especially early in each season
+          an option to include scrimmage results and/or stats from previous
+          game titles in the calculations since available match data is limited, especially early in each season
         </li>
       </ul>
     </div>
