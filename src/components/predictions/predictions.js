@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getPredictions, getTeams } from "../ApiManager.js"
+import { deletePrediction, getPredictions, getTeams } from "../ApiManager.js"
 import './predictions.css'
 
 export const PredictionHistory = ({ predictionSetterFunction , predictionsState, scrollToResults }) => {
@@ -17,6 +17,13 @@ export const PredictionHistory = ({ predictionSetterFunction , predictionsState,
     const localUser = localStorage.getItem("current_user")
     const userObject = JSON.parse(localUser)
     const userId = parseInt(userObject.id)
+
+    const reFetchPredictions = () => {
+        getPredictions(userId)
+        .then((responseArray) => {
+            predictionSetterFunction(responseArray)
+        })
+    }
 
     useEffect(() => {
         getPredictions(userId)
@@ -38,13 +45,28 @@ export const PredictionHistory = ({ predictionSetterFunction , predictionsState,
                     const team1 = teams.find(team => team.id === prediction.team1)
                     const team2 = teams.find(team => team.id === prediction.team2)
 
-                    return <div className="prediction--card" key={`prediction--${prediction.id}`}>
+                    return <div className="prediction" key={`prediction--${prediction.id}`}>
+
+                    <div className="prediction--card">
                     
                             <div className="prediction--team1">{team1?.fullName}</div>
                             <div className="prediction--score">{prediction?.score[0]}-{prediction.score[1]}</div>
                             <div className="prediction--team2">{team2?.fullName}</div>
 
                         </div> 
+
+                        <button className="button--round" 
+                                id={`delete--${prediction.id}`}
+                                onClick={(event) => {
+                                    const [,grabbedId] = event.target.id.split("--")
+                                    const predictionId = parseInt(grabbedId)
+
+                                    deletePrediction(predictionId)
+                                    .then(reFetchPredictions())
+
+                                }}>X</button>
+                    </div>
+                        
 
                 })
 
@@ -54,7 +76,7 @@ export const PredictionHistory = ({ predictionSetterFunction , predictionsState,
 
                 {predictionsState.length > 10 ? 
                         <button className="button" 
-                            style={{ 'marginBottom' : '30px' }}
+                            style={{ 'margin' : '20px 0 30px 0' }}
                             onClick={scrollToResults}
                             >back to results</button>:
                         ''}

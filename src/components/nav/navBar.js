@@ -32,8 +32,8 @@ export const NavBar = () => {
                         ? <li className="navbar--item navbar--logout">
                             <Link className="navbar--link" to="" onClick={() => {
                                 localStorage.removeItem("current_user")
-                                navigate("/", { replace: true })
                                 window.alert("You have been logged out")
+                                navigate("/", { replace: true })
                             }}>Logout</Link>
                         </li>
                         : <li className="navbar--item navbar--login">

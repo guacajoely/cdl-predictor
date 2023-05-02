@@ -22,12 +22,18 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
 
     useEffect(
         () => {
+            
 
-            const matchingTeams = teams.filter(team => {
-                return team.id === checkedTeamsState[0] || team.id === checkedTeamsState[1]
-            })
+            const team1 = teams.find(team => {
+                return team.id === checkedTeamsState[0]})
 
-            setFiltered(matchingTeams)
+            const team2 = teams.find(team => {
+                return team.id === checkedTeamsState[1]})
+            
+            const OtherMatchingTeams = team1 && team2 ? [team1, team2] : []
+
+            setFiltered(OtherMatchingTeams)
+            console.log(OtherMatchingTeams)
 
         }, [checkedTeamsState, teams]
     )

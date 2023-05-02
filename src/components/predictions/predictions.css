@@ -1,13 +1,12 @@
 .prediction--card{
     display: flex;
-    margin: 30px auto;
+    margin: 10px 0;
     padding: 5px 10px;
     border-radius: 15px;
     border: thin solid black;
     justify-content: center;
     align-items: center;
     background-color: white;
-    width:fit-content;
 }
 
 .prediction--score{
@@ -19,6 +18,29 @@
 .prediction--team1, .prediction--team2 {
     font-size: large;
     width:250px;
+}
+
+.prediction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button--round{
+    border-radius: 50%;
+    padding: 5px 8px;
+    margin: 5px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: solid thin white;
+}
+
+.button--round:hover {
+    background-color: white;
+    color: black;
+    border: solid thin black;
+    cursor: pointer;
 }
 
 
