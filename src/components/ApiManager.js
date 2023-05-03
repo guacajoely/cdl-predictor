@@ -30,3 +30,20 @@ export const deletePrediction = (id) => {
     method: "DELETE"
   })
 }
+
+export const getUserById = (id) => {
+  return fetch(`http://localhost:8088/users/${id}`)
+    .then(response => response.json())
+}
+
+export const editUser = (userObject) => {
+  return fetch(`http://localhost:8088/users/${userObject.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userObject)
+
+  })
+    .then(response => response.json())
+}
