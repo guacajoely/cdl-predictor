@@ -29,13 +29,17 @@ export const NavBar = () => {
 
                 {
                     localStorage.getItem("current_user")
-                        ? <li className="navbar--item navbar--logout">
-                            <Link className="navbar--link" to="" onClick={() => {
-                                localStorage.removeItem("current_user")
-                                window.alert("You have been logged out")
-                                navigate("/", { replace: true })
-                            }}>Logout</Link>
-                        </li>
+                        ?   <>
+                                <li className="navbar--item active">
+                                    <Link className="navbar--link" to="/profile">Profile</Link>
+                                </li><li className="navbar--item navbar--logout">
+                                    <Link className="navbar--link" to="" onClick={() => {
+                                        localStorage.removeItem("current_user")
+                                        window.alert("You have been logged out")
+                                        navigate("/", { replace: true })
+                                    }}>Logout</Link>
+                                </li>
+                            </>
                         : <li className="navbar--item navbar--login">
                             <Link className="navbar--link" to="/login" onClick={() => {
                                 navigate("/login")
