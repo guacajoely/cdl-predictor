@@ -47,7 +47,7 @@ export const Profile = () => {
     const handleSaveButtonClick = (evt) => {
         evt.preventDefault()
             editUser(user)
-            .then(toggleForm())
+            .then(toggleForm)
     }
 
     const handleDiscardClick = () => {
