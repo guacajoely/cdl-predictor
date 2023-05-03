@@ -27,10 +27,18 @@ export const About = () => {
       This is primarily a personal project for me as I am new to web design and
       programming and wanted to work on something I am passionate about.
       <p>
-        However, the idea was originally the result of a <a href="https://pickem.callofdutyleague.com">pickem app</a> being added to
-        the official CDL site. You can predict match
-        outcomes and even win prizes if you make it into the top 10 of the 
-        leaderboards, 
+        However, the idea was originally the result of a 
+        
+        &nbsp;
+        <a href="https://pickem.callofdutyleague.com"
+            //adding target to open in new tab, adding rel to prevent tabnabbing
+            target="_blank" 
+            rel="noopener noreferrer">pickem app</a> 
+        &nbsp;
+
+        being added to the official CDL site. You can predict match
+        outcomes and even win prizes if you make it into the top 10 
+        of the leaderboards, 
         <br></br>
         <br></br>
         <button className="not-a-button" onClick={toggleHidden}>Which I have done using this system!</button> 
