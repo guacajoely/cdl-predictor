@@ -31,7 +31,7 @@ export const PredictionHistory = ({ predictionSetterFunction , predictionsState,
                 predictionSetterFunction(responseArray)
             })
     },
-        [])
+        [predictionSetterFunction, userId])
 
     return <>
 

@@ -22,14 +22,14 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
 
     useEffect(
         () => {
-            
-
             const team1 = teams.find(team => {
-                return team.id === checkedTeamsState[0]})
+                return team.id === checkedTeamsState[0]
+            })
 
             const team2 = teams.find(team => {
-                return team.id === checkedTeamsState[1]})
-            
+                return team.id === checkedTeamsState[1]
+            })
+
             const OtherMatchingTeams = team1 && team2 ? [team1, team2] : []
 
             setFiltered(OtherMatchingTeams)
@@ -42,9 +42,15 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
         return Comparison(filteredTeams[0], filteredTeams[1])
     }
 
+    let winner = ''
+    let resultsText = ''
+
     const createTeam = (team, otherTeam, arrayIndex) => {
 
-        const finalScore = compareTeams()
+        const results = compareTeams()
+        const finalScore = results.finalScore
+        winner = results.winner
+        resultsText = results.resultsText
 
         return <div className="team--container">
             <img className={` 
@@ -88,23 +94,23 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
 
     const reFetchPredictions = () => {
         getPredictions(userId)
-        .then((responseArray) => {
-            predictionSetterFunction(responseArray)
-        })
+            .then((responseArray) => {
+                predictionSetterFunction(responseArray)
+            })
     }
 
     const handleSavePrediction = () => {
 
-        const finalScore = compareTeams()
+        const results = compareTeams()
+        const finalScore = results.finalScore
         const team1id = filteredTeams[0].id
         const team2id = filteredTeams[1].id
 
-        userObject?
-        createPrediction(userId, team1id, team2id, finalScore)
-            .then(reFetchPredictions())
-        :window.alert("Please login to save your predictions")
-
-        setTimeout(scrollToPredictions(), 1000)
+        userObject ?
+            createPrediction(userId, team1id, team2id, finalScore)
+                .then(reFetchPredictions)
+                .then(scrollToPredictions)
+            : window.alert("Please login to save your predictions")
     }
 
 
@@ -153,6 +159,9 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
 
                         </div>
 
+                        <div className="results--summary">{winner} {resultsText}</div>
+
+
                         <div className="button--container">
                             <button className="button" onClick={handleSavePrediction}> Save Prediction </button>
                             <button className="button" onClick={handleNewPrediction}> Make Another Prediction </button>
@@ -163,7 +172,7 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
 
                     :
 
-                    <div style={{ 'margin' : '40px' }}>Select 2 teams for a head-to-head comparison</div>
+                    <div style={{ 'margin': '40px' }}>Select 2 teams for a head-to-head comparison</div>
                 }
 
             </div>

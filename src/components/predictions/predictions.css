@@ -1,3 +1,7 @@
+.predictions--container{
+    margin-bottom: 20px;
+}
+
 .prediction--card{
     display: flex;
     margin: 10px 0;
@@ -42,7 +46,3 @@
     border: solid thin black;
     cursor: pointer;
 }
-
-
-
-

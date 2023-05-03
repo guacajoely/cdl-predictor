@@ -57,7 +57,7 @@ export const Register = () => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Register for CDL Match Predictor</h1>
+                <h1 className="header">Register for CDL Match Predictor</h1>
 
                 <fieldset>
                     <label htmlFor="username"> Username </label>

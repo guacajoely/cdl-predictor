@@ -146,3 +146,15 @@ td {
 .button--container{
     margin: 20px 0 40px 0;
 }
+
+.results--summary{
+    width: 600px;
+    margin: 5px auto;
+    border: thin solid black;
+    padding: 10px;
+}
+
+.summary--header{
+    margin: none;
+    padding: none;
+}
