@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { createUser, getUserByEmail } from "../ApiManager.js"
 import "./login.css"
 
 export const Register = () => {
@@ -7,24 +8,20 @@ export const Register = () => {
     const [user, setUser] = useState({
         username: "",
         password: "",
-        email: ""
+        email: "",
+        imageURL: "https://t3.ftcdn.net/jpg/00/64/67/80/360_F_64678017_zUpiZFjj04cnLri7oADnyMH0XBYyQghG.jpg"
     })
 
     let navigate = useNavigate()
 
     const registerNewUser = () => {
-        return fetch("http://localhost:8088/users", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(user)
-        })
-            .then(res => res.json())
+        return createUser(user)
             .then(createdUser => {
                 if (createdUser.hasOwnProperty("id")) {
                     localStorage.setItem("current_user", JSON.stringify({
-                        id: createdUser.id
+                        id: createdUser.id,
+                        username: createdUser.username,
+                        imageURL: createdUser.imageURL
                     }))
 
                     navigate("/")
@@ -34,8 +31,7 @@ export const Register = () => {
 
     const handleRegister = (event) => {
         event.preventDefault()
-        return fetch(`http://localhost:8088/users?email=${user.email}`)
-            .then(res => res.json())
+        return getUserByEmail(user.email)
             .then(response => {
                 if (response.length > 0) {
                     // Duplicate email. No good.

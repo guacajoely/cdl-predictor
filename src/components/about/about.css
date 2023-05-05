@@ -1,21 +1,21 @@
-.about--container{
+.about--container {
     margin: 30px;
     width: 500px;
 }
 
-.about--question{
+.about--question {
     font-weight: bold;
     font-size: 1.5rem;
 }
 
-.about--answer a{
+.about--answer a {
     font-weight: bold;
     text-decoration: none;
     font-size: large;
     color: black;
 }
 
-.about--answer a:hover{
+.about--answer a:hover {
     background-color: black;
     color: white;
     padding: 5px;
@@ -28,12 +28,12 @@
     font-size: large;
 }
 
-.not-a-button:hover{
+.not-a-button:hover {
     background-color: black;
     color: white;
     padding: 5px;
 }
 
-.hidden{
+.hidden {
     display: none;
 }

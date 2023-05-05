@@ -15,15 +15,15 @@ fieldset {
     text-align: left;
 }
 
-.form--login > fieldset > input[type="text"] {
+.form--login>fieldset>input[type="text"] {
     width: 25em;
 }
 
-.form--login > fieldset > input[type="email"] {
+.form--login>fieldset>input[type="email"] {
     width: 25em;
 }
 
-.form--login > fieldset > input[type="password"] {
+.form--login>fieldset>input[type="password"] {
     width: 25em;
 }
 
@@ -45,8 +45,8 @@ fieldset {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .container--login {
@@ -60,12 +60,12 @@ fieldset {
     z-index: 1;
     min-height: 25rem;
     min-width: 30rem;
-    background-color: hsla(0,0%,100%,0.40);
+    background-color: hsla(0, 0%, 100%, 0.40);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
 }
 
-.submit--button, .register--button{
+.submit--button, .register--button {
     background-color: black;
     color: white;
     border: solid thin white;
@@ -80,7 +80,7 @@ fieldset {
     cursor: pointer;
 }
 
-.link--register{
+.link--register {
     display: flex;
     justify-content: flex-end;
     justify-self: flex-end;

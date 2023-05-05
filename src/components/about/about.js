@@ -3,12 +3,13 @@ import "./about.css"
 
 export const About = () => {
 
-    const [hiddenState, setHiddenState] = useState(true)
+  //state for hidden leaderboard image toggle
+  const [hiddenState, setHiddenState] = useState(true)
 
-    const toggleHidden = () => { hiddenState ? setHiddenState(false) : setHiddenState(true)}
+  //function to toggle hidden state
+  const toggleHidden = () => { hiddenState ? setHiddenState(false) : setHiddenState(true) }
 
-
-    return <div className="about--container">
+  return <div className="about--container">
     <div className="about--question">What is this?</div>
     <div className="about--answer">
       A simple, interactive platform used to predict esport match outcomes based
@@ -17,7 +18,7 @@ export const About = () => {
     <br />
     <div className="about--question">What games are supported?</div>
     <div className="about--answer">
-      Initially, only Call of Duty will be supported, but the plan is to include  
+      Initially, only Call of Duty will be supported, but the plan is to include
       additional esports in the near future. Valorant is the most likely title to be
       added next.
     </div>
@@ -27,27 +28,27 @@ export const About = () => {
       This is primarily a personal project for me as I am new to web design and
       programming and wanted to work on something I am passionate about.
       <p>
-        However, the idea was originally the result of a 
-        
+        However, the idea was originally the result of a
+
         &nbsp;
         <a href="https://pickem.callofdutyleague.com"
-            //adding target to open in new tab, adding rel to prevent tabnabbing
-            target="_blank" 
-            rel="noopener noreferrer">pickem app</a> 
+          //adding target to open in new tab, adding rel to prevent tabnabbing
+          target="_blank"
+          rel="noopener noreferrer">pickem app</a>
         &nbsp;
 
         being added to the official CDL site. You can predict match
-        outcomes and even win prizes if you make it into the top 10 
-        of the leaderboards, 
+        outcomes and even win prizes if you make it into the top 10
+        of the leaderboards,
         <br></br>
         <br></br>
-        <button className="not-a-button" onClick={toggleHidden}>Which I have done using this system!</button> 
+        <button className="not-a-button" onClick={toggleHidden}>Which I have done using this system!</button>
         <br></br>
         <img className={`navbar--image ${hiddenState ? 'hidden' : ''}`} src={require("../../images/pickemLeaderboard.jpg")} alt="CDL LOGO" />
         <br></br>
-        Whether you want a baseline to fill out your bracket with the favorites 
-        for each match or you just haven't been following the league closely and 
-        want to check on how teams are performing, this app will allow you to 
+        Whether you want a baseline to fill out your bracket with the favorites
+        for each match or you just haven't been following the league closely and
+        want to check on how teams are performing, this app will allow you to
         easily do so.
       </p>
     </div>
@@ -75,5 +76,5 @@ export const About = () => {
       </ul>
     </div>
   </div>
-  
+
 }

@@ -36,6 +36,24 @@ export const getUserById = (id) => {
     .then(response => response.json())
 }
 
+export const getUserByEmail = (email) => {
+  return fetch(`http://localhost:8088/users?email=${email}`)
+    .then(res => res.json())
+}
+
+export const createUser = (userObject) => {
+  return fetch("http://localhost:8088/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userObject)
+  })
+    .then(res => res.json())
+}
+
+
+
 export const editUser = (userObject) => {
   return fetch(`http://localhost:8088/users/${userObject.id}`, {
     method: "PUT",

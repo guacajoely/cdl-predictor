@@ -19,28 +19,37 @@
     margin-top: 100px;
 }
 
-.profile--form{
+.profile--form {
     border: solid black;
     padding: 20px;
     border-radius: 25px;
     margin-top: 50px;
     background-color: white;
+    margin-bottom: 50px;
 }
 
-h3{
+h3 {
     text-align: center;
 }
 
-.button--form{
+.button--form {
     margin: 20px;
 }
 
-.profile--image{
-    height:160px;
+.profile--image {
+    height: 160px;
     border: solid black;
     border-radius: 50%;
     object-fit: contain;
     margin-bottom: 30px;
     padding: 0;
     /* box-shadow: 0 0 0 2px white; */
+}
+
+.form--label {
+    margin-bottom: 5px;
+}
+
+.user--input {
+    margin-top: 5px;
 }
