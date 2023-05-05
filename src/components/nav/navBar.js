@@ -3,11 +3,14 @@ import "./navBar.css"
 
 export const NavBar = () => {
 
-    const navigate = useNavigate()
-
     const localUser = localStorage.getItem("current_user")
     const userObject = JSON.parse(localUser)
     const userName = userObject?.username
+    const imageURL = userObject?.imageURL
+
+    const navigate = useNavigate()
+
+    console.log(imageURL)
 
     return (
         <ul className="navbar">
@@ -81,7 +84,7 @@ export const NavBar = () => {
                     localStorage.getItem("current_user")
                         ?
                         <Link className="navbar--link" to="/profile">
-                            <img className="navbar--image-profile" src={require("../../images/default.jpg")} alt="profile" />
+                            <img className="navbar--image-profile" src={imageURL} alt="profile" />
                         </Link>
                         : ''
                 }

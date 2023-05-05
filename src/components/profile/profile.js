@@ -14,7 +14,8 @@ export const Profile = () => {
         username: "",
         email: "",
         password: "",
-        faveTeam: 0
+        faveTeam: 0,
+        imageURL: ""
     })
 
     useEffect(() => {
@@ -31,6 +32,7 @@ export const Profile = () => {
     const localUser = localStorage.getItem("current_user")
     const userObject = JSON.parse(localUser)
     const userId = parseInt(userObject.id)
+    const imageURL = userObject.imageURL
 
     useEffect(() => {
         getUserById(userId)
@@ -44,10 +46,32 @@ export const Profile = () => {
     const matchingTeams = teams?.filter(team => team.id === user?.faveTeam)
     const faveTeam = matchingTeams[0]?.fullName
 
+    const updateCurrentUser = (user) => {
+
+        //save a copy of current user object
+        const copyOfUserObject = userObject
+
+        //delete the current user
+        localStorage.removeItem("current_user")
+
+        //update username
+        copyOfUserObject.username = user.username
+
+        //update image URL
+        copyOfUserObject.imageURL = user.imageURL
+
+        //set current_user to copy
+        localStorage.setItem("current_user", JSON.stringify(copyOfUserObject))
+        
+    }
+
+    //when saving profile, also update current_user by deleting it and replacing it with the updated info
     const handleSaveButtonClick = (evt) => {
         evt.preventDefault()
             editUser(user)
+            .then(updateCurrentUser(user))
             .then(toggleForm)
+            .then(window.location.reload())
     }
 
     const handleDiscardClick = () => {
@@ -81,6 +105,7 @@ export const Profile = () => {
                         } />
                 </div>
             </fieldset>
+
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="description">Email:</label>
@@ -140,6 +165,24 @@ export const Profile = () => {
                 </div>
             </fieldset>
 
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="description">Profile Image URL:</label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control user--input"
+                        value={user?.imageURL}
+                        onChange={
+                            (evt) => {
+                                const copy = {...user}
+                                copy.imageURL = evt.target.value
+                                setUser(copy)
+                            }
+                        } />
+                </div>
+            </fieldset>
+
             <button className="button button--form" onClick={handleDiscardClick}>Discard Changes</button>
             <button className="button button--form" onClick={handleSaveButtonClick}>Save Profile</button>
         
@@ -150,7 +193,7 @@ export const Profile = () => {
         <>  
             <div className="profile--container">
                 <h3>User Profile</h3>
-                <img className="profile--image" src={require("../../images/default.jpg")} alt="PROFILE" />
+                <img className="profile--image" src={imageURL} alt="PROFILE" />
                 <div>Username: {user?.username}</div>
                 <div>Email: {user?.email}</div>
                 <div>Favorite Team: {faveTeam}</div>
