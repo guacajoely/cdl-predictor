@@ -1,15 +1,48 @@
 export const getTeams = () => {
-  return fetch('http://localhost:8088/teams')
+  return fetch('https://cdl-predictor-api-huee9.ondigitalocean.app/teams')
+    .then(response => response.json())
+}
+
+export const getUserById = (id) => {
+  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/users/${id}`)
+    .then(response => response.json())
+}
+
+export const getUserByEmail = (email) => {
+  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/users?email=${email}`)
+    .then(res => res.json())
+}
+
+export const createUser = (userObject) => {
+  return fetch("https://cdl-predictor-api-huee9.ondigitalocean.app/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userObject)
+  })
+    .then(res => res.json())
+}
+
+export const editUser = (userObject) => {
+  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/users/${userObject.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userObject)
+
+  })
     .then(response => response.json())
 }
 
 export const getPredictions = (id) => {
-  return fetch(`http://localhost:8088/predictions?userId=${id}`)
+  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/predictions?userId=${id}`)
     .then(response => response.json())
 }
 
 export const createPrediction = (userId, team1id, team2id, score) => {
-  return fetch(`http://localhost:8088/predictions`, {
+  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/predictions`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -26,42 +59,7 @@ export const createPrediction = (userId, team1id, team2id, score) => {
 }
 
 export const deletePrediction = (id) => {
-  return fetch(`http://localhost:8088/predictions/${id}`, {
+  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/predictions/${id}`, {
     method: "DELETE"
   })
-}
-
-export const getUserById = (id) => {
-  return fetch(`http://localhost:8088/users/${id}`)
-    .then(response => response.json())
-}
-
-export const getUserByEmail = (email) => {
-  return fetch(`http://localhost:8088/users?email=${email}`)
-    .then(res => res.json())
-}
-
-export const createUser = (userObject) => {
-  return fetch("http://localhost:8088/users", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(userObject)
-  })
-    .then(res => res.json())
-}
-
-
-
-export const editUser = (userObject) => {
-  return fetch(`http://localhost:8088/users/${userObject.id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(userObject)
-
-  })
-    .then(response => response.json())
 }
