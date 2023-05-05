@@ -150,6 +150,7 @@ export const Profile = () => {
         <>  
             <div className="profile--container">
                 <h3>User Profile</h3>
+                <img className="profile--image" src={require("../../images/default.jpg")} alt="PROFILE" />
                 <div>Username: {user?.username}</div>
                 <div>Email: {user?.email}</div>
                 <div>Favorite Team: {faveTeam}</div>

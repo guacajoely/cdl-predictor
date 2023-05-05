@@ -40,8 +40,18 @@
     height: 80px;
 }
 
-.navbar--links{
+.navbar--links, .navbar--container--right{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.navbar--image-profile{
+    height:80px;
+    border: solid black;
+    border-radius: 50%;
+    object-fit: contain;
+    margin-right: 10px;
+    padding: 0;
+    /* box-shadow: 0 0 0 2px white; */
 }

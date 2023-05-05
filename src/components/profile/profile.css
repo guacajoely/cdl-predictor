@@ -34,3 +34,13 @@ h3{
 .button--form{
     margin: 20px;
 }
+
+.profile--image{
+    height:160px;
+    border: solid black;
+    border-radius: 50%;
+    object-fit: contain;
+    margin-bottom: 30px;
+    padding: 0;
+    /* box-shadow: 0 0 0 2px white; */
+}
