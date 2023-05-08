@@ -23,6 +23,7 @@
 
 .prediction--team1, .prediction--team2 {
     font-size: large;
+    width: 250px;
 }
 
 .prediction {
