@@ -111,7 +111,8 @@ code {
   }
 
   .team--label {
-    font-size: .5rem;
+    font-size: .6rem;
+    height: 120px;
   }
 
   .prediction--score {
