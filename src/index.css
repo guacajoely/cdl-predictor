@@ -114,7 +114,7 @@ code {
 
   .team--label {
     font-size: .8rem;
-    height: 120px;
+    height: 125px;
     padding: 2px;
   }
 
@@ -159,24 +159,19 @@ code {
   }
 
   .results--text--table {
-    width: 150px;
+    width: 160px;
     font-size: small;
     padding: 0;
     margin: 0;
-  }
-
-  .results--text--table {
-    width: 150px;
-    font-size: small;
-    padding: 0;
-    margin: 0;
+    margin-top: 32px;
   }
 
   .results--text--table>tr>td {
-    width: 150px;
+    width: 160px;
     font-size: small;
     padding: 4px;
     margin: 0;
+    border: thin solid red;
   }
 
   .team--table {
@@ -190,7 +185,7 @@ code {
   }
 
   .team--table>tr>td {
-    width: 100px;
+    width: 80px;
     font-size: small;
     padding: 4px;
     margin: 0;
@@ -203,13 +198,8 @@ code {
     margin-top: 10px;
   }
 
-  .results--text--table {
-    width: 150px;
-    margin-top: 32px;
-  }
-
   .results--text--table>tr {
-    margin: 9px;
+    margin: 8px;
   }
 
   .results--text {
