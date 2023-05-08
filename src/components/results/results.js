@@ -89,7 +89,7 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
 
     const handleNewPrediction = () => {
         checkedTeamsSetterFunction([])
-        scrollToTeams()
+        setTimeout(scrollToTeams, 500)
     }
 
     const reFetchPredictions = () => {

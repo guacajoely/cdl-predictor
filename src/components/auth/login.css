@@ -51,7 +51,6 @@ fieldset {
 
 .container--login {
     text-align: center;
-    padding: 50px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -63,7 +62,6 @@ fieldset {
     background-color: hsla(0, 0%, 100%, 0.40);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
-    border: thin solid red;
 }
 
 .submit--button, .register--button {
