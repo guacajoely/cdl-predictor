@@ -1,3 +1,22 @@
+.home--container{
+    text-align: center;
+}
+  
+.teams--header, .results--header, .history--header, .about--header{
+    font-size: 40px;
+    font-weight: bold;
+    width: 90vw;
+    height: fit-content;
+    border: thick solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background-color: white;
+}
+
 .footer {
     width: 100%;
     background-color: black;

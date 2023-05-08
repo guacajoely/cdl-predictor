@@ -1,6 +1,6 @@
 .about--container {
     margin: 30px;
-    width: 500px;
+    max-width: 500px;
 }
 
 .about--question {
