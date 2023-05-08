@@ -148,8 +148,8 @@ code {
   }
 
   .results--image {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     padding: 10px;
     border: solid var(--light-gray);
     border-radius: 25px;
@@ -159,7 +159,7 @@ code {
   }
 
   .results--text--table {
-    width: 160px;
+    width: 170px;
     font-size: small;
     padding: 0;
     margin: 0;
@@ -167,11 +167,10 @@ code {
   }
 
   .results--text--table>tr>td {
-    width: 160px;
+    width: 170px;
     font-size: small;
     padding: 4px;
     margin: 0;
-    border: thin solid red;
   }
 
   .team--table {
@@ -199,12 +198,12 @@ code {
   }
 
   .results--text--table>tr {
-    margin: 8px;
+    margin: 9px;
   }
 
   .results--text {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     margin-top: 25px;
   }
 
