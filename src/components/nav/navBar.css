@@ -7,13 +7,27 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    height: 120px;
 }
 
 .navbar--item > a {
     color: white;
     text-decoration: none;
     margin: 10px;
+}
+
+.navbar--profile--link > a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar--profile--link{
+    list-style-type: none;
+    margin: 0;
+}
+
+.navbar--image-mobile{
+    display: none;
 }
 
 .navbar--item {
@@ -26,7 +40,9 @@
 }
 
 .navbar--image{
-    width: 600px;
+    max-width: 600px;
+    display: flex;
+    padding: 10px;
 }
 
 .navbar--links--right{
@@ -45,12 +61,12 @@
     justify-content: center;
 }
 
-.navbar--image-profile{
+.navbar--image-profile, .navbar--image-mobile{
     height:80px;
     border: solid black;
     border-radius: 50%;
     object-fit: contain;
-    margin-right: 10px;
     padding: 0;
     /* box-shadow: 0 0 0 2px white; */
 }
+

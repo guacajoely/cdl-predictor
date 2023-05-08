@@ -16,7 +16,7 @@ export const NavBar = () => {
         <ul className="navbar">
             <li className="navbar--item active">
                 <Link className="navbar--link" to="/">
-                    <img className="navbar--image" src={require("../../images/header.png")} alt="CDL LOGO" />
+                    <img className="navbar--image" src={require("../../images/header3.png")} alt="CDL LOGO" />
                 </Link>
             </li>
             <div className="navbar--container--right">
@@ -26,7 +26,8 @@ export const NavBar = () => {
                 {
                     localStorage.getItem("current_user")
                         ?
-                        <li className="navbar--item active">
+                        <li className="navbar--profile--link active">
+                        <img className="navbar--image-mobile" src={imageURL} alt="profile" />
                             <Link className="navbar--link" to="/profile">{userName}</Link>
                         </li>
 

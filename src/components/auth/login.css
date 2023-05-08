@@ -15,17 +15,17 @@ fieldset {
     text-align: left;
 }
 
-.form--login>fieldset>input[type="text"] {
-    width: 25em;
+/* .form--login>fieldset>input[type="text"] {
+    min-width: 15em;
 }
 
 .form--login>fieldset>input[type="email"] {
-    width: 25em;
+    min-width: 15em;
 }
 
 .form--login>fieldset>input[type="password"] {
-    width: 25em;
-}
+    min-width: 15em;
+} */
 
 .label--login {
     width: 8rem;
@@ -52,17 +52,18 @@ fieldset {
 .container--login {
     text-align: center;
     padding: 50px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form--login {
     padding: 50px;
     background-position-x: right;
     z-index: 1;
-    min-height: 25rem;
-    min-width: 30rem;
     background-color: hsla(0, 0%, 100%, 0.40);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    border: thin solid red;
 }
 
 .submit--button, .register--button {

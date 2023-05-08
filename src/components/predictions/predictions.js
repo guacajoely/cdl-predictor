@@ -50,7 +50,10 @@ export const PredictionHistory = ({ predictionSetterFunction , predictionsState,
                     <div className="prediction--card">
                     
                             <div className="prediction--team1">{team1?.fullName}</div>
-                            <div className="prediction--score">{prediction?.score[0]}-{prediction.score[1]}</div>
+
+                            {/* replace hyphen with non-breaking one (&#8209;) */}
+                            <div className="prediction--score">{prediction?.score[0]}&#8209;{prediction.score[1]}</div>
+                            
                             <div className="prediction--team2">{team2?.fullName}</div>
 
                         </div> 
