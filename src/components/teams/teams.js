@@ -30,9 +30,13 @@ export const TeamSection = ({ checkedTeamsState, checkedTeamsSetterFunction, scr
             checkedTeamsSetterFunction([...copy])
         }
 
-        //IF 2 TEAMS ALREADY SELECTED, window alert
+        //IF 2 TEAMS ALREADY SELECTED, clear checked team state by splicing both already selected, and pushing new selection in
         else if (checkedTeamsState.length === 2) {
-            return window.alert('You may only select 2 teams to compare at this time')
+            const copy = checkedTeamsState
+            copy.splice(0, 2)
+            copy.push(teamId)
+            console.log(`team #${teamId} was checked`)
+            checkedTeamsSetterFunction([...copy])
         }
 
         // IF ITS NOT ALREADY BEEN ADDED, AND THERES NOT ALREADY 2 TEAMS SELECTED, ADD IT
