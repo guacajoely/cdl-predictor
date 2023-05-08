@@ -199,31 +199,29 @@ code {
     margin-top: 10px;
   }
 
-  .results--text--table{
+  .results--text--table {
     width: 150px;
     margin-top: 32px;
-}
+  }
 
-.results--text--table > tr {
+  .results--text--table>tr {
     margin: 9px;
-}
+  }
 
-.results--text{
-  width: 90px;
-  height: 90px;
-  margin-top: 25px;
-}
+  .results--text {
+    width: 90px;
+    height: 90px;
+    margin-top: 25px;
+  }
 
-.loser--overall, .winner--overall{
-  margin-top: 10px;
-}
+  .loser--overall,
+  .winner--overall {
+    margin-top: 10px;
+  }
 
-.results--summary{
-  box-sizing: border-box;
-  width: 90%;
-}
-
-
-
+  .results--summary {
+    box-sizing: border-box;
+    width: 90%;
+  }
 
 }
