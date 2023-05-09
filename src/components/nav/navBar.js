@@ -10,8 +10,6 @@ export const NavBar = () => {
 
     const navigate = useNavigate()
 
-    console.log(imageURL)
-
     return (
         <ul className="navbar">
             <li className="navbar--item active">

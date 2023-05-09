@@ -26,7 +26,7 @@ export const TeamSection = ({ checkedTeamsState, checkedTeamsSetterFunction, scr
             // IF IT WAS ALREADY ADDED, REMOVE IT (uncheck)
             const copy = checkedTeamsState
             copy.splice(copy.indexOf(teamId), 1)
-            console.log(`team #${teamId} was UNchecked`)
+            // console.log(`team #${teamId} was UNchecked`)
             checkedTeamsSetterFunction([...copy])
         }
 
@@ -35,7 +35,7 @@ export const TeamSection = ({ checkedTeamsState, checkedTeamsSetterFunction, scr
             const copy = checkedTeamsState
             copy.splice(0, 2)
             copy.push(teamId)
-            console.log(`team #${teamId} was checked`)
+            // console.log(`team #${teamId} was checked`)
             checkedTeamsSetterFunction([...copy])
         }
 
@@ -43,7 +43,7 @@ export const TeamSection = ({ checkedTeamsState, checkedTeamsSetterFunction, scr
         else {
             const copy = checkedTeamsState
             copy.push(teamId)
-            console.log(`team #${teamId} was checked`)
+            // console.log(`team #${teamId} was checked`)
             checkedTeamsSetterFunction([...copy])
 
             //IF THIS IS THE SECOND TEAM CHECKED, SCROLL TO RESULTS SECTION
@@ -52,7 +52,7 @@ export const TeamSection = ({ checkedTeamsState, checkedTeamsSetterFunction, scr
             }
         }
 
-        console.log(checkedTeamsState)
+        // console.log(checkedTeamsState)
 
     }
 

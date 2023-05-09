@@ -1,3 +1,8 @@
+.sources--update{
+    font-size: large;
+    text-align: center;
+}
+
 .sources--container{
     margin: 30px auto;
     max-width: 600px;

@@ -33,7 +33,7 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
             const OtherMatchingTeams = team1 && team2 ? [team1, team2] : []
 
             setFiltered(OtherMatchingTeams)
-            console.log(OtherMatchingTeams)
+            // console.log(OtherMatchingTeams)
 
         }, [checkedTeamsState, teams]
     )
