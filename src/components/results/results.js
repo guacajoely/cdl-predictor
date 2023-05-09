@@ -8,6 +8,7 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
     const [teams, setTeams] = useState([])
     const [filteredTeams, setFiltered] = useState([])
 
+    //get current user id from local storage
     const localUser = localStorage.getItem("current_user")
     const userObject = JSON.parse(localUser)
     const userId = parseInt(userObject?.id)
@@ -30,6 +31,7 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
                 return team.id === checkedTeamsState[1]
             })
 
+            //only set filtered once both teams are selected, otherwise blank array
             const OtherMatchingTeams = team1 && team2 ? [team1, team2] : []
 
             setFiltered(OtherMatchingTeams)
@@ -38,6 +40,8 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
         }, [checkedTeamsState, teams]
     )
 
+    // Comparison function imported to compare two teams. 
+    // compareTeams called in createTeam and handleSavePrediction
     const compareTeams = () => {
         return Comparison(filteredTeams[0], filteredTeams[1])
     }
@@ -87,6 +91,7 @@ export const ResultsSection = ({ checkedTeamsState, scrollToTeams, scrollToPredi
         </div>
     }
 
+    //.5 second timeout added because scroll up was not delayed enough in mobile test
     const handleNewPrediction = () => {
         checkedTeamsSetterFunction([])
         setTimeout(scrollToTeams, 500)
