@@ -8,15 +8,15 @@ If the user wants to save their predictions, they must register an account and l
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The API can be accessed from a separate repository [here](https://github.com/guacajoely/cdl-predictor-api) 
+The API can be accessed from a separate repository [here](https://github.com/guacajoely/cdl-predictor-api).
 
-you can run it locally with the terminal command: 
+You can run it locally with the terminal command: 
 
 `json-server -p 8088 -w database.json`
 
 **-or-**
 
-the API is also currently deployed on Digital Ocean [here](https://cdl-predictor-api-huee9.ondigitalocean.app/)
+the API is also currently deployed on Digital Ocean [here](https://cdl-predictor-api-huee9.ondigitalocean.app/).
 
 Once you've confirmed you have access to one of the APIs (and checked that the correct API location is linked in ApiManager), you can launch the app with the terminal command:
 
