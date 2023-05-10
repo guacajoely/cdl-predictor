@@ -59,14 +59,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 10px;
 }
 
 .navbar--image-profile, .navbar--image-mobile{
     height:80px;
+    width: 80px;
     border: solid black;
-    border-radius: 50%;
-    object-fit: contain;
     padding: 0;
+    background-size: cover;
+    background-position: center center;
+    -webkit-border-radius: 50%;
+    -webkit-background-clip: border-box;
+    -moz-border-radius: 50%;
+    -moz-background-clip: border;
+    border-radius: 50%;
+    background-clip: border-box;
+    background-color: black;
     /* box-shadow: 0 0 0 2px white; */
 }
 

@@ -25,7 +25,7 @@ export const NavBar = () => {
                     localStorage.getItem("current_user")
                         ?
                         <li className="navbar--profile--link active">
-                        <img className="navbar--image-mobile" src={imageURL} alt="profile" />
+                        <div className="navbar--image-mobile" style={{backgroundImage: `url(${imageURL})`}}></div>
                             <Link className="navbar--link" to="/profile">{userName}</Link>
                         </li>
 
@@ -83,7 +83,7 @@ export const NavBar = () => {
                     localStorage.getItem("current_user")
                         ?
                         <Link className="navbar--link" to="/profile">
-                            <img className="navbar--image-profile" src={imageURL} alt="profile" />
+                        <div className="navbar--image-profile" style={{backgroundImage: `url(${imageURL})`}}></div>
                         </Link>
                         : ''
                 }

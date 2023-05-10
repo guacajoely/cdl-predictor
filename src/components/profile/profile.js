@@ -193,7 +193,11 @@ export const Profile = () => {
             <>
                 <div className="profile--container">
                     <h3>User Profile</h3>
-                    <img className="profile--image" src={imageURL} alt="PROFILE" />
+
+                    {/* replace profile image with div with image url as background to maintain aspect ratio*/}
+                    {/* <img className="profile--image" src={imageURL} alt="PROFILE" /> */}
+                    
+                    <div className="profile--image" style={{backgroundImage: `url(${imageURL})`}}></div>
                     <div>Username: {user?.username}</div>
                     <div>Email: {user?.email}</div>
                     <div>Favorite Team: {faveTeam}</div>

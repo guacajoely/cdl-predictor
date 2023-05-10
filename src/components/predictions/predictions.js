@@ -47,7 +47,7 @@ export const PredictionHistory = ({ predictionSetterFunction , predictionsState,
 
                     return <div className="prediction" key={`prediction--${prediction.id}`}>
 
-                    <div className="prediction--card">
+                    <div className="prediction--card" draggable="true">
                     
                             <div className="prediction--team1">{team1?.fullName}</div>
 
