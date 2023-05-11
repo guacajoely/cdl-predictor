@@ -128,12 +128,12 @@ code {
   }
 
   .prediction--container {
-    width: 100%;
+    width: 100vw;
   }
 
   .prediction--card {
     width: 85%;
-    max-width: 400px;
+    max-width: 420px;
   }
 
   .results--text {
