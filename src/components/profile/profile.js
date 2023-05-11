@@ -65,13 +65,15 @@ export const Profile = () => {
 
     }
 
+    const reloadPage = () => {window.location.reload()}
+
     //when saving profile, also update current_user by deleting it and replacing it with the updated info
     const handleSaveButtonClick = (evt) => {
         evt.preventDefault()
         editUser(user)
             .then(updateCurrentUser(user))
             .then(toggleForm)
-            .then(window.location.reload())
+            .then(reloadPage)
     }
 
     const handleDiscardClick = () => {
@@ -95,7 +97,7 @@ export const Profile = () => {
                             required autoFocus
                             type="text"
                             className="form-control user--input"
-                            value={user?.username}
+                            value={user.username}
                             onChange={
                                 (evt) => {
                                     const copy = { ...user }
@@ -113,7 +115,7 @@ export const Profile = () => {
                             required autoFocus
                             type="text"
                             className="form-control user--input"
-                            value={user?.email}
+                            value={user.email}
                             onChange={
                                 (evt) => {
                                     const copy = { ...user }
@@ -131,7 +133,7 @@ export const Profile = () => {
                             required autoFocus
                             type={showPassword ? "text" : "password"}
                             className="form-control user--input"
-                            value={user?.password}
+                            value={user.password}
                             onChange={
                                 (evt) => {
                                     const copy = { ...user }
