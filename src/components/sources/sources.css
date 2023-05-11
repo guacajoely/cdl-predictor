@@ -41,6 +41,7 @@
     justify-content: center;
     align-items: center;
     margin: 20px auto;
+    box-shadow: 0 3px 3px rgb(0 0 0 / 40%);
 }
 
 .sources--section{

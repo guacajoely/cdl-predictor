@@ -70,6 +70,7 @@ fieldset {
     border: solid thin white;
     padding: 10px;
     border-radius: 15px;
+    box-shadow: 0 3px 3px rgb(0 0 0 / 40%);
 }
 
 .submit--button:hover, .register--button:hover {
@@ -77,6 +78,7 @@ fieldset {
     color: black;
     border: solid thin black;
     cursor: pointer;
+    box-shadow: 0 5px 5px rgb(0 0 0 / 40%);
 }
 
 .link--register {

@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     height: 120px;
+    box-shadow: 0 3px 3px rgb(0 0 0 / 40%);
 }
 
 .navbar--item > a {

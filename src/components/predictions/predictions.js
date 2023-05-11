@@ -67,7 +67,7 @@ export const PredictionHistory = ({ predictionSetterFunction , predictionsState,
                                     deletePrediction(predictionId)
                                     .then(reFetchPredictions)
 
-                                }}>X</button>
+                                }}>x</button>
                     </div>
                         
 

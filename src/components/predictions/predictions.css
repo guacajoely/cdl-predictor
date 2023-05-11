@@ -12,6 +12,7 @@
     align-items: center;
     background-color: white;
     width: 600px;
+    box-shadow: 0 3px 3px rgb(0 0 0 / 40%);
 }
 
 .prediction--score{
@@ -34,12 +35,12 @@
 
 .button--round{
     border-radius: 50%;
-    padding: 5px 8px;
+    padding: 0 9px 2px 9px;
     margin: 5px;
-    font-weight: bold;
     background-color: black;
     color: white;
     border: solid thin white;
+    font-size: 1.5rem;
 }
 
 .button--round:hover {
@@ -47,4 +48,6 @@
     color: black;
     border: solid thin black;
     cursor: pointer;
+    /* padding: 0 8px 2px 8px;
+    font-weight: bold; */
 }
