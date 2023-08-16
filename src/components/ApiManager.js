@@ -1,20 +1,20 @@
 export const getTeams = () => {
-  return fetch('https://cdl-predictor-api-huee9.ondigitalocean.app/teams')
+  return fetch('http://localhost:8088/teams')
     .then(response => response.json())
 }
 
 export const getUserById = (id) => {
-  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/users/${id}`)
+  return fetch(`http://localhost:8088/users/${id}`)
     .then(response => response.json())
 }
 
 export const getUserByEmail = (email) => {
-  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/users?email=${email}`)
+  return fetch(`http://localhost:8088/users?email=${email}`)
     .then(res => res.json())
 }
 
 export const createUser = (userObject) => {
-  return fetch("https://cdl-predictor-api-huee9.ondigitalocean.app/users", {
+  return fetch("http://localhost:8088/users", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -25,7 +25,7 @@ export const createUser = (userObject) => {
 }
 
 export const editUser = (userObject) => {
-  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/users/${userObject.id}`, {
+  return fetch(`http://localhost:8088/users/${userObject.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -37,12 +37,12 @@ export const editUser = (userObject) => {
 }
 
 export const getPredictions = (id) => {
-  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/predictions?userId=${id}`)
+  return fetch(`http://localhost:8088/predictions?userId=${id}`)
     .then(response => response.json())
 }
 
 export const createPrediction = (userId, team1id, team2id, score) => {
-  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/predictions`, {
+  return fetch(`http://localhost:8088/predictions`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -59,7 +59,7 @@ export const createPrediction = (userId, team1id, team2id, score) => {
 }
 
 export const deletePrediction = (id) => {
-  return fetch(`https://cdl-predictor-api-huee9.ondigitalocean.app/predictions/${id}`, {
+  return fetch(`http://localhost:8088/predictions/${id}`, {
     method: "DELETE"
   })
 }
