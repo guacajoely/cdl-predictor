@@ -14,18 +14,21 @@ You can watch a video of me presenting my app [HERE](https://www.loom.com/share/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The API can be accessed from a separate repository [here](https://github.com/guacajoely/cdl-predictor-api).
+The mock JSON API can be accessed from a separate repository [here](https://github.com/guacajoely/cdl-predictor-api).
 
-You can run it locally with the terminal command: 
+After cloning this repo to your machine and installing node.js, 
+you can run it locally by installing json-server with this terminal command: 
+
+`npm install -g json-server`
+
+And then run it with this terminal command. Feel free to change the address at which it is hosted (8088).
 
 `json-server -p 8088 -w database.json`
 
 **-or-**
 
-the API is also currently deployed on Digital Ocean [here](https://cdl-predictor-api-huee9.ondigitalocean.app/).
-
-Once you've confirmed you have access to one of the APIs (and checked that the correct API location is linked in ApiManager), you can launch the app with the terminal command:
+Once you've confirmed you have access to the API, you can launch the app within this repo with the terminal command:
 
 `npm start`
 
-and open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+It should automatically launch the app at [http://localhost:3000](http://localhost:3000) in your default browser.
